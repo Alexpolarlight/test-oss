@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import '../App.css'
 import { Header, Footer } from './Layouts'
 import Exercises from './Exercises'
-import { products } from '../Products.json'
+import { products } from './Products.json'
 
 
 const styles = {
