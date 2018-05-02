@@ -28,7 +28,7 @@ class App extends Component {
         (result) => {
           this.setState({
             isLoaded: true,
-            items: result.products
+            products: result.products
           });
         },
         (error) => {
