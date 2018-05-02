@@ -29,12 +29,12 @@ const styles = {
     }
 }
 
-export default ({ products, image }) => 
+export default ({ products, image }) => {
   <Grid container spacing={8}>
       <Grid item sm={9}>
         <Paper style={styles.Paper}>
           {products.map(
-            ({image, name, description, price}) => 
+            ({image, name, description, price}) => {
                 <Card style={styles.Card} className='Card' >
                   <CardMedia style={styles.CardMedia}
                     image={image}
@@ -52,6 +52,7 @@ export default ({ products, image }) =>
                       </Typography>
                     </CardContent>
                 </Card>
+            }
           )}
         </Paper>
       </Grid>
@@ -61,3 +62,4 @@ export default ({ products, image }) =>
         </Paper>
       </Grid>
   </Grid>
+}
