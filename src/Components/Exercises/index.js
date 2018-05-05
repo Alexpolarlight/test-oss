@@ -36,9 +36,9 @@ export default ({ products, image }) => {
           {products.map(
             ({image, name, description, price}) => {
                 <Card style={styles.Card} className='Card' >
-                  <CardMedia style={styles.CardMedia}
-                    image={image}
-                    title={name}
+                    <CardMedia style={styles.CardMedia}
+                      image={image}
+                      title={name}
                     />
                     <CardContent>
                       <Typography gutterBottom variant="headline" component="h2">
