@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from 'react'
-import { products } from './Products.json'
-import { Grid, Paper, Typography, Button, Chip } from 'material-ui'
-import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card'
-import DoneIcon from '@material-ui/icons/Done'
-import { withStyles } from 'material-ui/styles';
+import { products } from './products.json'
+import { Grid, Paper, Typography } from 'material-ui' //, Button, Chip
+import Card, {  CardContent, CardMedia } from 'material-ui/Card' //CardActions,
+//import DoneIcon from '@material-ui/icons/Done'
+//import { withStyles } from 'material-ui/styles';
 
 const styles = {
     Paper: {
@@ -32,34 +32,34 @@ class Fetch extends Component {
     constructor() {
         super();
         this.state = {
-            pictures: [],
+            products: [],
         };
     }
 
     componentDidMount() {
-        fetch('./Products.json')
+        fetch('./products.json')
         .then(results => {
             return results.json();
         }).then(data => {
-            let products = data.results.map((name, image, description, price) => {
-                return(
+            let products = data.results.map((nm, img, descr, prc) => {
+                return (
                     <Grid container spacing={8}>
                         <Grid item sm={9}>
                             <Paper style={styles.Paper}>
-                                <Card style={styles.Card} className='Card' >
+                                <Card style={styles.Card} className='Card'>
                                     <CardMedia style={styles.CardMedia}
-                                        image={image.results}
-                                        title={name.results}
+                                        image={products.img.image}
+                                        title={nm.name}
                                         />
                                         <CardContent>
                                         <Typography gutterBottom variant="headline" component="h2">
-                                            {name.results}
+                                            {nm.name}
                                         </Typography>
                                         <Typography component="p" className='Description'>
-                                            {description.results}
+                                            {descr.description}
                                         </Typography>
                                         <Typography component="p" variant="subheading">
-                                            {price.results}
+                                            {prc.price}
                                         </Typography>
                                         </CardContent>
                                     </Card>
